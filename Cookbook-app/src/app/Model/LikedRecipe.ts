@@ -1,9 +1,8 @@
 import {User} from './User';
 import {Recipe} from './Recipe';
 
-export interface RateRecipe{
-  id:number;
-  rating: number;
+export interface LikedRecipe{
+  id: number;
   user: User;
   recipe: Recipe;
 }
