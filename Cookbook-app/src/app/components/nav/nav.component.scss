@@ -1,0 +1,30 @@
+@import '../../../styles.scss';
+
+
+
+
+
+
+
+
+.navbar{
+display: flex;
+justify-content: flex-start;
+
+background-color: $primary;
+color:white;
+
+#signup{
+  justify-self: flex-end;
+}
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+.title{
+  color: $accent2;
+}
+.titlespacer{
+  flex: 1 2 auto;
+}
