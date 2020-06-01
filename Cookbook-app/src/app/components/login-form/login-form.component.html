@@ -1,15 +1,24 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <mat-label>Email</mat-label>
-    <input matInput [formControl]="emailFormControl"
-    [errorStateMatcher]="matcher"
-           placeholder="Ex. pat@example.com">
-    <mat-hint>Errors appear instantly!</mat-hint>
-    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-      Please enter a valid email address
-    </mat-error>
-    <mat-error *ngIf="emailFormControl.hasError('required')">
-      Email is <strong>required</strong>
-    </mat-error>
-  </mat-form-field>
+<form class= "login-container">
+<!-- <img src="../../../assets/download.jpg"> -->
+<div class="image">
+<div class="login-box">
+<mat-card class="login-card">
+<div>
+<mat-form-field class= "login-input">
+  <input matInput type="text">
+  <mat-placeholder class="placeholder">Username</mat-placeholder>
+</mat-form-field>
+</div>
+<div>
+<mat-form-field class= "login-input">
+  <input matInput type="password">
+  <mat-placeholder class="placeholder">Password</mat-placeholder>
+</mat-form-field>
+</div>
+</mat-card>
+</div>
+</div>
 </form>
+
+
+
