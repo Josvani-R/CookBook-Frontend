@@ -5,12 +5,10 @@
 
 
 
-
-
 .navbar{
+height: $navheight;
 display: flex;
 justify-content: flex-start;
-
 background-color: $primary;
 color:white;
 
@@ -27,4 +25,8 @@ color:white;
 }
 .titlespacer{
   flex: 1 2 auto;
+}
+
+.content{
+  height: 100%;
 }
