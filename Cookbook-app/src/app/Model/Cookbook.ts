@@ -5,4 +5,5 @@ export interface Cookbook{
   user:User;
   name: string;
   Description: string;
+  photokey:string;
 }
