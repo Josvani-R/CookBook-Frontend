@@ -2,8 +2,8 @@ export interface User{
   id: number;
   username: string;
   password: string;
-  firstname: string;
-  lastname: string;
+  firstName: string;
+  lastName: string;
   url: string;
   admin: boolean;
 }

@@ -17,6 +17,6 @@ export class UsersService {
 
 getAllUsers(): Promise<User[]>{
   console.log('hello');
-  return this.http.get<User[]>(`${this.url}/all`).toPromise();
+  return this.http.get<User[]>(`${this.url}`).toPromise();
 }
 }
