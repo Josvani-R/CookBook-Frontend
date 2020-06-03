@@ -10,11 +10,11 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class NavComponent implements OnInit {
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches),
-      shareReplay()
-    );
+  // isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Web)
+  //   .pipe(
+  //     map(result => result.matches),
+  //     shareReplay()
+  //   );
 
   constructor(private breakpointObserver: BreakpointObserver) { }
 
