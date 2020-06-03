@@ -6,7 +6,8 @@ const baseURI = 'http://localhost';
 const port = '8080';
 export const environment = {
   production: false,
-  userURI: `${baseURI}:${port}/user`
+  userURI: `${baseURI}:${port}/users`,
+  cookBookURI: `${baseURI}:${port}/cookbooks`
 
 };
 
