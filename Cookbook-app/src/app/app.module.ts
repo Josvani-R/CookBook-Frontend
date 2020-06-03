@@ -20,6 +20,7 @@ import { MatListModule } from '@angular/material/list';
 import { NavComponent } from './components/nav/nav.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CookbookComponent } from './components/cookbook/cookbook.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     LoginFormComponent,
     NavComponent,
-    HomepageComponent
+    HomepageComponent,
+    CookbookComponent
   ],
   imports: [
     BrowserModule,
