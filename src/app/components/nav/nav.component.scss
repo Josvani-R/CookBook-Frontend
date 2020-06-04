@@ -2,6 +2,7 @@
 
 
 
+
 .fas{
 color: $accent2;
 margin: auto;
@@ -11,6 +12,7 @@ margin: auto;
 .sidenav{
  width: 25%;
 }
+
 
 
 .navbar{
@@ -40,6 +42,7 @@ color:white;
 .content{
   height: 100%;
 }
+
 @media only screen and (max-height: 800px){
   #signup{
     line-height: 30px !important;

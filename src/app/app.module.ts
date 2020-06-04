@@ -21,6 +21,9 @@ import { NavComponent } from './components/nav/nav.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CookbookComponent } from './components/cookbook/cookbook.component';
+import { RecipemodalComponent } from './components/recipemodal/recipemodal.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { CookbookComponent } from './components/cookbook/cookbook.component';
     LoginFormComponent,
     NavComponent,
     HomepageComponent,
+    CookbookComponent,
+    RecipemodalComponent
     CookbookComponent
+
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,10 @@ import { CookbookComponent } from './components/cookbook/cookbook.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
