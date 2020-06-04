@@ -4,11 +4,24 @@
 
 
 
+.fas{
+color: $accent2;
+margin: auto;
+
+}
+
+.sidenav{
+ width: 25%;
+}
+
 
 
 
 .navbar{
+
+height: $navheight;
 display: flex;
+overflow-y: hidden;
 justify-content: flex-start;
 
 background-color: $primary;
@@ -16,6 +29,9 @@ color:white;
 
 #signup{
   justify-self: flex-end;
+
+  margin-left: 0%;
+
 }
 }
 
@@ -26,5 +42,31 @@ color:white;
   color: $accent2;
 }
 .titlespacer{
-  flex: 1 2 auto;
+
+  flex: 1.05 1 auto;
+}
+
+.content{
+  height: 100%;
+}
+
+@media only screen and (max-height: 800px){
+  #signup{
+    line-height: 30px !important;
+
+  }
+
+}
+
+
+
+@media only screen and (max-width: 600px){
+  #signup{
+    line-height: 28px !important;
+    min-width: 60px !important;
+  }
+  .titlespacer{
+    flex: 2 1 auto;
+  }
+
 }
