@@ -1,4 +1,5 @@
 
+
 import { Component, OnInit, Input, Inject } from '@angular/core';
 import { Cookbook } from 'src/app/Model/Cookbook';
 import { RecipemodalComponent } from '../recipemodal/recipemodal.component';
@@ -13,6 +14,7 @@ import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 })
 export class CookbookComponent implements OnInit {
 
+
   animal: string = 'lion';
 
 @Input()
@@ -20,8 +22,10 @@ cookbook: Cookbook;
   constructor(public dialog: MatDialog) { }
 
 
+
   ngOnInit(): void {
   }
+
 
 
   openDialog() {
@@ -31,4 +35,5 @@ cookbook: Cookbook;
       }
     });
   }
+
 }
