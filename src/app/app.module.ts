@@ -21,6 +21,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CookbookComponent } from './components/cookbook/cookbook.component';
+import { RecipedetailComponent } from './recipedetail/recipedetail.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CookbookComponent } from './components/cookbook/cookbook.component';
     LoginFormComponent,
     NavComponent,
     HomepageComponent,
-    CookbookComponent
+    CookbookComponent,
+    RecipedetailComponent
   ],
   imports: [
     BrowserModule,
