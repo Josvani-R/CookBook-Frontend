@@ -22,7 +22,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CookbookComponent } from './components/cookbook/cookbook.component';
 
-import { RecipedetailComponent } from './recipedetail/recipedetail.component';
+import { RecipedetailComponent } from './components/recipedetail/recipedetail.component';
 import { RecipemodalComponent } from './components/recipemodal/recipemodal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 
