@@ -7,7 +7,9 @@ const port = '8080';
 export const environment = {
   production: false,
   userURI: `${baseURI}:${port}/users`,
-  cookBookURI: `${baseURI}:${port}/cookbooks`
+  cookBookURI: `${baseURI}:${port}/cookbooks`,
+  recipeURI: `${baseURI}:${port}/recipes`,
+  ingredientURI: `${baseURI}:${port}/ingredients`
 
 };
 

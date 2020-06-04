@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+
+
+@include mat-core();
+
+
+$october-app-primary: mat-palette($mat-deep-orange);
+$october-app-accent:  mat-palette($mat-orange, A200, A100, A400);
+
+$october-app-warn: mat-palette($mat-red);
+
+
+$october-app-theme: mat-light-theme($october-app-primary, $october-app-accent, $october-app-warn);
+
+@include angular-material-theme($october-app-theme);
+
