@@ -1,0 +1,16 @@
+
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{cookbook.title}}</mat-card-title>
+      <mat-card-subtitle>{{cookbook.user.firstName}} {{cookbook.user.lastName}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://blogs.biomedcentral.com/on-medicine/wp-content/uploads/sites/6/2019/09/iStock-1131794876.t5d482e40.m800.xtDADj9SvTVFjzuNeGuNUUGY4tm5d6UGU5tkKM0s3iPk-620x342.jpg" alt="heart">
+    <mat-card-content>
+      <p>{{cookbook.description}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
