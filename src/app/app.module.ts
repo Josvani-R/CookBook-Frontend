@@ -25,6 +25,7 @@ import { RecipemodalComponent } from './components/recipemodal/recipemodal.compo
 import { MatDialogModule } from '@angular/material/dialog';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     HomepageComponent,
     CookbookComponent,
     RecipemodalComponent
+    CookbookComponent
+
   ],
   imports: [
     BrowserModule,
@@ -52,6 +55,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatListModule,
     HttpClientModule,
     MatDialogModule
+
 
   ],
   providers: [],
