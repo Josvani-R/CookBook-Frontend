@@ -4,6 +4,8 @@ import { Component, OnInit, Input, Inject } from '@angular/core';
 import { Cookbook } from 'src/app/Model/Cookbook';
 import { RecipemodalComponent } from '../recipemodal/recipemodal.component';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { RecipeService } from 'src/app/service/recipe.service';
+import { Recipe } from 'src/app/Model/Recipe';
 
 
 
@@ -15,11 +17,11 @@ import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 export class CookbookComponent implements OnInit {
 
 
-  animal: string = 'lion';
+  recipes: Recipe[];
 
 @Input()
 cookbook: Cookbook;
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private recipeService: RecipeService ) { }
 
 
 
@@ -29,11 +31,21 @@ cookbook: Cookbook;
 
 
   openDialog() {
+
     this.dialog.open(RecipemodalComponent, {
       data: {
-        animal: this.animal
+        recipes: this.recipes,
       }
     });
+  }
+
+  getRecipesByCookbookId(){
+    this.recipeService.getRecipesByCookbookId(this.cookbook.id)
+    .then(res => {
+    this.recipes = res;
+    this.openDialog();
+    console.log(res);
+      });
   }
 
 }

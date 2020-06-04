@@ -1,0 +1,9 @@
+@import "../../../styles.scss";
+
+.single-recipe{
+  display: flex;
+}
+.get-recipe-button{
+  background-color: $accent;
+  margin-right: 10px;
+}
