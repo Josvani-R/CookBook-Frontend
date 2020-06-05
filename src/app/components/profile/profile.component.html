@@ -1,0 +1,38 @@
+<div class="profile-component">
+  <div class="user-content">
+    <div class="user-image"
+      style="background-image: url(https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/avat-01-512.png)">
+    </div>
+    <div class="user-info">
+      <h3>{{user.firstName}} {{user.lastName}}</h3>
+      <h5>{{user.username}}</h5>
+      <div class="user-actions">
+        <button mat-button (click)="openDialog()" class="edit-button"><em class="fas fa-user-edit fa-2x"></em></button>
+        <p>
+          <mat-icon matBadge="{{cookbooks  && cookbooks.length}}" matBadgeColor="primary">book</mat-icon>
+          <!-- Include text description of the icon's meaning for screen-readers -->
+          <span class="cdk-visually-hidden">
+            Example with a home icon with overlaid badge showing the number 15
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="CookBook">
+    <div class="cookbooks-div">
+      <app-cookbook *ngFor="let cookbook of cookbooks" [cookbook]="cookbook"></app-cookbook>
+    </div>
+  </mat-tab>
+  <mat-tab label="Favorite Recipes">
+    <div class="favorite-div">
+      <app-recipe *ngFor="let recipe of likedRecipes" [recipe]="recipe.recipe" [favorite]="true"></app-recipe>
+    </div>
+  </mat-tab>
+  <mat-tab label="Recipes">
+    <div class="favorite-div">
+      <app-recipe *ngFor="let recipe of likedRecipes" [recipe]="recipe.recipe"></app-recipe>
+    </div>
+  </mat-tab>
+</mat-tab-group>

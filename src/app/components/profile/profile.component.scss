@@ -1,0 +1,61 @@
+@import '../../../styles.scss';
+
+.profile-component {
+  background-color: $secondary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .user-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .user-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 100%;
+      background-clip: padding-box;
+      background-size: cover;
+      background-position: center center;
+    }
+
+    .user-info {
+      margin: 20px;
+
+      .user-actions {
+        color: $primary;
+        display: flex;
+
+        .mat-icon {
+          font-size: 20px;
+        }
+
+        .edit-button {
+          color: $accent;
+          background-color: transparent;
+        }
+
+      }
+    }
+  }
+
+
+}
+
+.cookbooks-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.favorite-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
