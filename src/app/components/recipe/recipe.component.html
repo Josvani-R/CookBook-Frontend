@@ -1,0 +1,15 @@
+<mat-card [routerLink]="['/recipe/'+ recipe.id]" class="recipe-card">
+  <mat-icon *ngIf="favorite" aria-hidden="false" aria-label="favorite icon" class="fav-icon">star</mat-icon>
+
+
+  <mat-card-content class="recipe-content">
+    <mat-card-title>{{recipe.name}}</mat-card-title>
+    <mat-card-subtitle>Created By: {{recipe.cookbook.user.firstName}} {{recipe.cookbook.user.lastName}}
+    </mat-card-subtitle>
+    <mat-card-subtitle>Cookbook: {{recipe.cookbook.title}} </mat-card-subtitle>
+
+  </mat-card-content>
+  <mat-card-content class="recipe-image"
+    [ngStyle]="{'background-image': 'url(../../../assets/chocolate-beside-raspberry-918328.jpg)','background-size': 'cover'}">
+  </mat-card-content>
+</mat-card>

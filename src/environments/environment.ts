@@ -10,11 +10,9 @@ export const environment = {
 
   cookBookURI: `${baseURI}:${port}/cookbooks`,
   recipeURI: `${baseURI}:${port}/recipes`,
-  ingredientURI: `${baseURI}:${port}/ingredients`
-
-
+  likedRecipeURI: `${baseURI}:${port}/likerecipe`,
+  ingredientURI: `${baseURI}:${port}/ingredients`,
 };
-
 
 /*
  * For easier debugging in development mode, you can import the following file
