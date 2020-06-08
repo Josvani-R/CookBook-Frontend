@@ -9,6 +9,7 @@ import { LikedRecipe } from 'src/app/Model/LikedRecipe';
 import { LikedRecipeService } from 'src/app/service/liked-recipe.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditUserModalComponent } from '../edit-user-modal/edit-user-modal.component';
+import { PexelService } from 'src/app/service/pexel.service';
 
 @Component({
   selector: 'app-profile',
@@ -19,13 +20,17 @@ export class ProfileComponent implements OnInit {
   user: User;
   cookbooks: Cookbook[];
   likedRecipes: LikedRecipe[];
+  photo: string;
+  photographer: string;
+  photographer_url: string;
 
   constructor(
     private route: ActivatedRoute,
     private userService: UsersService,
     private cookbookService: CookBookService,
     private likedRecipeService: LikedRecipeService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private pexelService: PexelService
   ) {}
 
   ngOnInit(): void {
@@ -33,6 +38,23 @@ export class ProfileComponent implements OnInit {
     this.getCookBooksById();
     this.getAllRecipiesById();
     this.getAllFavoriteRecipesById();
+    this.getPhotoBackground();
+  }
+
+  getPhotoBackground(): void {
+    this.pexelService
+      .getRandomPhotos('cook')
+      .then((res) => {
+        let randomPhoto = Math.round(Math.random() * res.photos.length);
+        this.photo = res.photos[randomPhoto].src.large2x;
+        console.log(res);
+
+        this.photographer = res.photos[randomPhoto].photographer;
+        this.photographer_url = res.photos[randomPhoto].photographer_url;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   getCookBooksById() {
@@ -73,6 +95,7 @@ export class ProfileComponent implements OnInit {
     this.dialog.open(EditUserModalComponent, {
       data: {
         user: this.user,
+        getUser: this.getUserById,
       },
     });
   }

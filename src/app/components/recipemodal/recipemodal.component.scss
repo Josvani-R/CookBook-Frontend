@@ -1,9 +1,29 @@
 @import "../../../styles.scss";
 
-.single-recipe{
+.single-recipe {
   display: flex;
 }
-.get-recipe-button{
+
+.get-recipe-button {
   background-color: $accent;
   margin-right: 10px;
+}
+
+mat-card {
+  width: 100%;
+  display: flex;
+  margin: 5px;
+  background-color: $primary;
+  color: white;
+
+  .logo-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $accent;
+    margin-right: 5px;
+    width: 30%;
+    border-radius: 50%;
+
+  }
 }

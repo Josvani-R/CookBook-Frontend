@@ -1,18 +1,19 @@
 <h1 mat-dialog-title>Recipes</h1>
+
 <mat-dialog-content class="mat-typography">
-  <div  *ngIf = 'data.recipes'>
-   <div class = "single-recipe" *ngFor = 'let recipe of data.recipes'>
+  <div *ngIf='data.recipes'>
+    <div class="single-recipe" *ngFor='let recipe of data.recipes'>
 
-    <div>
-    <button mat-button mat-dialog-close class = "get-recipe-button" [routerLink]="['/recipe/'+ recipe.id]"><em class="fas fa-utensils"></em>
-        </button>
-      </div>
-      <div>
-        <h3>{{recipe.name}}</h3>
-        <p>{{recipe.description}}</p>
-
-      </div>
+      <mat-card [routerLink]="['/recipe/'+ recipe.id]" mat-dialog-close>
+        <div class="logo-div">
+          <em class="fas fa-utensils fa-3x"></em>
+        </div>
+        <div>
+          <h3>{{recipe.name}}</h3>
+          <p>{{recipe.description}}</p>
+        </div>
+      </mat-card>
     </div>
   </div>
 </mat-dialog-content>
-
+<button mat-button mat-dialog-close>Close</button>

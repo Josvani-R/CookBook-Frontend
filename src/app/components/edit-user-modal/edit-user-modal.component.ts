@@ -20,6 +20,7 @@ export class EditUserModalComponent implements OnInit {
   ngOnInit(): void {
     this.getUser();
   }
+
   getUser() {
     this.userService
       .getUserById(this.data.user.id)
@@ -36,7 +37,7 @@ export class EditUserModalComponent implements OnInit {
     this.userService
       .updateUser(this.editUser)
       .then((res) => {
-        this.data.user = this.editUser;
+        this.data.getUser();
       })
       .catch((error) => {
         console.log(error);

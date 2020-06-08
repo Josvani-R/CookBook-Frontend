@@ -6,40 +6,49 @@
   justify-content: center;
   align-items: center;
 
-  .user-content {
+  width: 100%;
+
+
+
+  mat-card {
+
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-
-    .user-image {
-      width: 150px;
-      height: 150px;
-      border-radius: 100%;
-      background-clip: padding-box;
-      background-size: cover;
-      background-position: center center;
+    mat-card-subtitle {
+      color: white;
     }
 
-    .user-info {
-      margin: 20px;
 
-      .user-actions {
-        color: $primary;
-        display: flex;
+    .user-photo {
+      width: 150px;
+      height: 150px;
+    }
 
-        .mat-icon {
-          font-size: 20px;
+    .mat-card-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+
+      .photographer {
+        font-size: .8rem;
+        font-weight: 100;
+
+        a {
+          color: #FFFFFF;
+          text-decoration: none;
         }
-
-        .edit-button {
-          color: $accent;
-          background-color: transparent;
-        }
-
       }
     }
   }
+
 
 
 }
