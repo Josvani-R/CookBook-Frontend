@@ -54,8 +54,7 @@ parseLogIn(response) {
 
 logOut()
 {
-  localStorage.removeItem("token");
-  localStorage.removeItem("userId");
+ this.loginService.logOut;
 }
 
 }

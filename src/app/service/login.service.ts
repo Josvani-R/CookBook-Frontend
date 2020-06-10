@@ -18,4 +18,10 @@ export class LoginService {
   login(email: string, password: string) {
     return this.http.get<any>(`${this.url}/${email}/${password}`).toPromise();
   }
+
+  logOut()
+{
+  localStorage.removeItem("token");
+  localStorage.removeItem("userId");
+}
 }
