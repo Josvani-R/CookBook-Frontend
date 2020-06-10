@@ -1,7 +1,34 @@
-<div *ngIf="video" class="background-video">
+<div *ngIf="video1" class="background-video">
+  <mat-carousel  timings="250ms ease-in"
+  [autoplay]="true"
+  interval="5000"
+  color="accent"
+  maxWidth="auto"
+  proportion="70"
+  slides="3"
+  [loop]="true"
+  [hideArrows]="true"
+  [hideIndicators]="true"
+  [useKeyboard]="false"
+  [useMouseWheel]="false"
+  orientation="ltr">
+    <mat-carousel-slide >
   <video muted="muted" autoplay loop poster={{poster}}>
-    <source src={{video}}>
-    <source src={{video}}.webm type=" video/webm"> </video> </div>
+    <source src={{video1}}>
+    <source src={{video1}}.webm type=" video/webm"> </video>
+    </mat-carousel-slide>
+    <mat-carousel-slide >
+      <video muted="muted" autoplay loop poster={{poster}}>
+        <source src={{video2}}>
+        <source src={{video2}}.webm type=" video/webm"> </video>
+        </mat-carousel-slide>
+        <mat-carousel-slide >
+          <video muted="muted" autoplay loop poster={{poster}}>
+            <source src={{video3}}>
+            <source src={{video3}}.webm type=" video/webm"> </video>
+            </mat-carousel-slide>
+    </mat-carousel>
+</div>
 <form class="login-container">
 
   <div class="login-box">
