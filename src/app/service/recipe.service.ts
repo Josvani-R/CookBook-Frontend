@@ -32,4 +32,8 @@ getAllRecipes(): Promise<Recipe[]> {
   return this.http.get<Recipe[]>(`${this.url}`).toPromise();
 }
 
+getRecipeById(id): Promise<Recipe> {
+  return this.http.get<Recipe>(`${this.url}/${id}`).toPromise();
+}
+
 }
