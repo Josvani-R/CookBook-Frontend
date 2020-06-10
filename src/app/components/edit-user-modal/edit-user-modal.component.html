@@ -25,5 +25,8 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="updateUser()">Update</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="updateUser()" [disabled]="
+    (this.data.user.firstName == this.editUser.firstName &&
+    this.data.user.lastName == this.editUser.lastName &&
+    this.data.user.username == this.editUser.username) !== false">Update</button>
 </mat-dialog-actions>

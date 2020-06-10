@@ -34,6 +34,7 @@ export class ProfileComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    let id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.getUserById();
     this.getCookBooksById();
     this.getAllRecipiesById();
@@ -43,7 +44,7 @@ export class ProfileComponent implements OnInit {
 
   getPhotoBackground(): void {
     this.pexelService
-      .getRandomPhotos('cook')
+      .getRandomPhotos('cooking')
       .then((res) => {
         let randomPhoto = Math.round(Math.random() * res.photos.length);
         this.photo = res.photos[randomPhoto].src.large2x;
@@ -95,7 +96,6 @@ export class ProfileComponent implements OnInit {
     this.dialog.open(EditUserModalComponent, {
       data: {
         user: this.user,
-        getUser: this.getUserById,
       },
     });
   }

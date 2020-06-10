@@ -1,4 +1,5 @@
-<div class="profile-component" style="background-image: url({{photo}}); background-size: cover;">
+<div class="profile-component"
+  style="background-image: url({{photo}}); background-size: cover; background-position: center;">
 
   <mat-card>
     <div class="user-photo"
@@ -11,8 +12,8 @@
 
       <button mat-button (click)="openDialog()" class="edit-button"><em class="fas fa-user-edit fa-2x"></em></button>
       <div class="photographer">
-        <a href="{{photographer_url}}" target="_blank">Photo by: {{photographer}}</a> <a href="https://www.pexels.com/"
-          target="_blank"> on
+        <a href="{{photographer_url}}" target="_blank">Photo by: {{photographer}}</a> <br><a
+          href="https://www.pexels.com/" target="_blank"> From:
           Pexels.com</a>
       </div>
     </mat-card-actions>

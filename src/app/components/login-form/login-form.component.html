@@ -1,28 +1,27 @@
+<div *ngIf="video" class="background-video">
+  <video muted="muted" autoplay loop poster={{poster}}>
+    <source src={{video}}>
+    <source src={{video}}.webm type=" video/webm"> </video> </div>
+<form class="login-container">
+
+  <div class="login-box">
+    <mat-card class="login-card">
+      <div>
+        <mat-form-field class="login-input">
+          <input matInput type="text">
+          <mat-placeholder class="placeholder">Username</mat-placeholder>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="login-input">
+          <input matInput type="password">
+          <mat-placeholder class="placeholder">Password</mat-placeholder>
+        </mat-form-field>
+      </div>
 
 
-<form class= "login-container">
-
-<div class="login-box">
-<mat-card class="login-card">
-<div>
-<mat-form-field class= "login-input">
-  <input matInput type="text">
-  <mat-placeholder class="placeholder">Username</mat-placeholder>
-</mat-form-field>
-</div>
-<div>
-<mat-form-field class= "login-input">
-  <input matInput type="password">
-  <mat-placeholder class="placeholder">Password</mat-placeholder>
-</mat-form-field>
-</div>
-
-
-<button id="login" mat-stroked-button type="submit">Login</button>
-</mat-card>
-</div>
+      <button id="login" mat-stroked-button type="submit">Login</button>
+    </mat-card>
+  </div>
 
 </form>
-
-
-

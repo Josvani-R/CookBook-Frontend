@@ -29,16 +29,22 @@ export class HomepageComponent implements OnInit {
   }
 
   getPhotoBackground(): void {
-    this.pexelService
-      .getRandomPhotos('cooking')
-      .then((res) => {
-        this.photo =
-          res.photos[Math.round(Math.random() * res.photos.length)].src.large2x;
-        console.log(res);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    616360;
+
+    this.pexelService.getPhotoById(349609).then((res) => {
+      console.log(res);
+      this.photo = res.src.large2x;
+    });
+    // this.pexelService
+    //   .getRandomPhotos('cooking')
+    //   .then((res) => {
+    //     this.photo =
+    //       res.photos[Math.round(Math.random() * res.photos.length)].src.large2x;
+    //     console.log(res);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   }
 
   getAllCookBooks(): void {
