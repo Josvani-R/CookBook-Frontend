@@ -21,7 +21,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CookbookComponent } from './components/cookbook/cookbook.component';
-
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { RecipedetailComponent } from './components/recipedetail/recipedetail.component';
 import { RecipemodalComponent } from './components/recipemodal/recipemodal.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -66,6 +66,7 @@ import { EditUserModalComponent } from './components/edit-user-modal/edit-user-m
     MatDialogModule,
     MatTabsModule,
     MatBadgeModule,
+    MatCarouselModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],
