@@ -1,0 +1,31 @@
+<a [routerLink]="['/profile/'+ user.id]">
+<mat-card class="user-card">
+
+  <mat-card-header>
+
+    <img mat-card-image src="https://cdn.vox-cdn.com/thumbor/4wTRTzQFIcMFxjNn474v-QiBTz0=/0x0:3765x2487/1200x800/filters:focal(1641x1339:2243x1941)/cdn.vox-cdn.com/uploads/chorus_image/image/62979007/gordon_ramsay_lucky_ca.0.jpg" alt="gordon">
+
+
+  </mat-card-header>
+<mat-card-content>
+  <h4>{{user.firstName}} {{user.lastName}}</h4>
+  <p>{{user.username}}
+  </p>
+
+  <mat-card-footer>
+    <em matBadge="{{cookbooks.length}}" matBadgeColor="$primary" class="fas fa-book-open fa-2x"></em>
+    <em matBadge="120" matBadgeColor="$primary" class="fas fa-utensil-spoon fa-2x"></em>
+
+
+  </mat-card-footer>
+
+  </mat-card-content>
+
+
+
+  <mat-card-actions>
+    <!-- <button mat-button (click)="getRecipesByCookbookId()">Recipes</button> -->
+
+  </mat-card-actions>
+</mat-card>
+</a>
