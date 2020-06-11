@@ -18,3 +18,4 @@ export class FilterPipe implements PipeTransform {
       return it.toLocaleLowerCase().includes(searchText);
     });
   }
+}

@@ -47,7 +47,7 @@ export class LoginFormComponent implements OnInit {
       clearInterval(this.getVid);
     }
   }
-}
+
  login(email, password) {
     this.loginService.login(email, password)
     .then(response => this.parseLogIn(response))
@@ -61,8 +61,10 @@ parseLogIn(response) {
       localStorage.setItem("token", response.idtoken);
       localStorage.setItem("userId", response.User.id);
       this.router.navigate(['homepage']);
-logOut()
-{
+  }
+}
+
+logOut(){
  this.loginService.logOut;
 }
 
@@ -80,3 +82,4 @@ logOut()
     });
   }
 }
+
