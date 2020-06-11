@@ -20,11 +20,10 @@ export class LoginFormComponent implements OnInit {
     Validators.required,
     Validators.email,
   ]);
-  video1: any;
-  video2: any;
-  video3: any;
+
   poster: any;
   getVid: any;
+  videoLinks: string[] = [];
 
   // matcher = new MyErrorStateMatcher();
   constructor(private pexelService: PexelService) {}
@@ -46,9 +45,12 @@ export class LoginFormComponent implements OnInit {
       let randomVideo = Math.round(Math.random() * res.videos.length);
       console.log(res.videos[randomVideo]);
 
-      this.video1 = res.videos[5].video_files[0].link;
-      this.video2 = res.videos[4].video_files[0].link;
-      this.video3 = res.videos[9].video_files[0].link;
+      res.videos.forEach((element) => {
+        element.video_files.forEach((element2) => {
+          element2.width == '1920' && this.videoLinks.push(element2.link);
+        });
+      });
+      console.log(this.videoLinks);
     });
   }
 }
