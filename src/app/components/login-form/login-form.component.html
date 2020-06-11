@@ -1,33 +1,16 @@
-<div *ngIf="video1" class="background-video">
-  <mat-carousel  timings="250ms ease-in"
-  [autoplay]="true"
-  interval="5000"
-  color="accent"
-  maxWidth="auto"
-  proportion="70"
-  slides="3"
-  [loop]="true"
-  [hideArrows]="true"
-  [hideIndicators]="true"
-  [useKeyboard]="false"
-  [useMouseWheel]="false"
-  orientation="ltr">
-    <mat-carousel-slide >
-  <video muted="muted" autoplay loop poster={{poster}}>
-    <source src={{video1}}>
-    <source src={{video1}}.webm type=" video/webm"> </video>
+<div *ngIf="videoLinks" class="background-video">
+  <mat-carousel timings="500ms ease-in" [autoplay]="true" interval="5000" color="accent" maxWidth="100%"
+    slides="{{videoLinks.length}}" [loop]="true" [hideArrows]="true" [hideIndicators]="true" [useKeyboard]="false"
+    proportion="50" [useMouseWheel]="false" orientation="rtl">
+    <mat-carousel-slide #matCarouselSlide *ngFor="let link of videoLinks" overlayColor="#00000040"
+      [hideOverlay]="false">
+      <div>
+        <video autoplay loop muted>
+          <source src={{link}}>
+        </video>
+      </div>
     </mat-carousel-slide>
-    <mat-carousel-slide >
-      <video muted="muted" autoplay loop poster={{poster}}>
-        <source src={{video2}}>
-        <source src={{video2}}.webm type=" video/webm"> </video>
-        </mat-carousel-slide>
-        <mat-carousel-slide >
-          <video muted="muted" autoplay loop poster={{poster}}>
-            <source src={{video3}}>
-            <source src={{video3}}.webm type=" video/webm"> </video>
-            </mat-carousel-slide>
-    </mat-carousel>
+  </mat-carousel>
 </div>
 <form class="login-container">
 
@@ -45,8 +28,6 @@
           <mat-placeholder class="placeholder">Password</mat-placeholder>
         </mat-form-field>
       </div>
-
-
       <button id="login" mat-stroked-button type="submit">Login</button>
     </mat-card>
   </div>
