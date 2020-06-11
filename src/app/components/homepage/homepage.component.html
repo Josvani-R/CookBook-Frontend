@@ -1,13 +1,12 @@
 <!-- <p>{{user1.firstname}}</p> -->
 
 
-<div class="homepage-container">
-  <h1>Cookbooks</h1>
+<div class="homepage-container" style="background-image: url({{photo}}); background-size: cover">
+  <h1>News feed</h1>
   <div class="cookbook-container">
-    <app-cookbook *ngFor="let cookbook of cookbooks" [cookbook]="cookbook">
-
-    </app-cookbook>
+    <app-cookbook *ngFor="let cookbook of cookbooks" [cookbook]="cookbook"></app-cookbook>
   </div>
 
-</div>
 
+
+</div>

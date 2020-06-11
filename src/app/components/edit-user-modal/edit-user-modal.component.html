@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>Update {{data.user.firstName}}'s Info<mat-icon matSuffix>edit</mat-icon>
+</h2>
+
+<mat-dialog-content class="mat-typography">
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input [(ngModel)]="editUser.firstName" matInput placeholder="Edit First Name" value='{{editUser.firstName}}'>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input [(ngModel)]="editUser.lastName" matInput placeholder="Edit Last Name" value='{{editUser.lastName}}'>
+
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input [(ngModel)]="editUser.username" matInput placeholder="Edit Username" value='{{editUser.username}}'>
+
+    </mat-form-field>
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="updateUser()" [disabled]="
+    (this.data.user.firstName == this.editUser.firstName &&
+    this.data.user.lastName == this.editUser.lastName &&
+    this.data.user.username == this.editUser.username) !== false">Update</button>
+</mat-dialog-actions>

@@ -1,0 +1,38 @@
+<div class="profile-component"
+  style="background-image: url({{photo}}); background-size: cover; background-position: center;">
+
+  <mat-card>
+    <div class="user-photo"
+      style="background-image: url('https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/avat-01-512.png'); background-size: cover;">
+    </div>
+    <mat-card-title>{{user.firstName}} {{user.lastName}}</mat-card-title>
+    <mat-card-subtitle>{{user.username}}</mat-card-subtitle>
+
+    <mat-card-actions>
+
+      <button mat-button (click)="openDialog()" class="edit-button"><em class="fas fa-user-edit fa-2x"></em></button>
+      <div class="photographer">
+        <a href="{{photographer_url}}" target="_blank">Photo by: {{photographer}}</a> <br><a
+          href="https://www.pexels.com/" target="_blank"> From:
+          Pexels.com</a>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="CookBook">
+    <div class="cookbooks-div">
+      <app-cookbook *ngFor="let cookbook of cookbooks" [cookbook]="cookbook"></app-cookbook>
+    </div>
+  </mat-tab>
+  <mat-tab label="Favorite Recipes">
+    <div class="favorite-div">
+      <app-recipe *ngFor="let recipe of likedRecipes" [recipe]="recipe.recipe" [favorite]="true"></app-recipe>
+    </div>
+  </mat-tab>
+  <mat-tab label="Recipes">
+    <div class="favorite-div">
+      <app-recipe *ngFor="let recipe of likedRecipes" [recipe]="recipe.recipe"></app-recipe>
+    </div>
+  </mat-tab>
+</mat-tab-group>

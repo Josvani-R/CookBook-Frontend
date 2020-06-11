@@ -1,10 +1,19 @@
-<h1 mat-dialog-title>Favorite Animal</h1>
-<div mat-dialog-content>
-  My favorite animal is:
-  <ul>
-    <li>
-      <span>&#10003;</span> {{data.animal}}
-    </li>
-  </ul>
-</div>
+<h1 mat-dialog-title>Recipes</h1>
 
+<mat-dialog-content class="mat-typography">
+  <div *ngIf='data.recipes'>
+    <div class="single-recipe" *ngFor='let recipe of data.recipes'>
+
+      <mat-card [routerLink]="['/recipe/'+ recipe.id]" mat-dialog-close>
+        <div class="logo-div">
+          <em class="fas fa-utensils fa-3x"></em>
+        </div>
+        <div>
+          <h3>{{recipe.name}}</h3>
+          <p>{{recipe.description}}</p>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</mat-dialog-content>
+<button mat-button mat-dialog-close>Close</button>

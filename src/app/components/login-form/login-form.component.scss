@@ -1,14 +1,30 @@
 @import '../../../styles.scss';
 
 
+.background-video {
+  height: 100vh - $navheight;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+  background-color: $secondary;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
 
-.placeholder{
+  video {
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+}
+
+.placeholder {
   color: white;
 }
 
 
-.login-input{
+.login-input {
   width: 100%;
 
 
@@ -20,82 +36,73 @@
 
 }
 
-::ng-deep .mat-form-field-underline .mat-form-field-ripple{
+::ng-deep .mat-form-field-underline .mat-form-field-ripple {
 
-  background-color:$accent2 !important;
-}
-::ng-deep .mat-form-field-underline{
-
-  background-color:$accent !important;
+  background-color: $accent2 !important;
 }
 
+::ng-deep .mat-form-field-underline {
 
-.login-container{
+  background-color: $accent !important;
+}
+
+
+.login-container {
 
   height: 100vh - $navheight;
   width: 100%;
-  display:flex;
+  display: flex;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("../../../assets/avocado-cooked-delicious-dish-262959.jpg");
+
   align-items: center;
   justify-content: center;
+  position: relative;
 
-    .login-box{
-      min-height: 50vh;
-      min-width:40vw;
+  .login-box {
+    min-height: 50vh;
+    min-width: 40vw;
+    margin: auto;
+    background-color: rgba($color: black, $alpha: .4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .login-card {
       margin: auto;
-      background-color: rgba($color: black, $alpha: .4);
+      width: 40%;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
+      min-height: 25vh;
+      background-color: rgba($color: $primary, $alpha: .7);
 
-      .login-card{
-        margin: auto;
-        width: 40%;
-        display: flex;
-        flex-direction: column;
-        min-height: 25vh;
-        background-color:rgba($color: $primary, $alpha: .7);
-
-        #login{
-          color: white;
-          background-color: $accent;
-          align-self: center;
-          width: 20%;
-        }
+      #login {
+        color: white;
+        background-color: $accent;
+        align-self: center;
+        width: 20%;
+      }
 
 
-   }
+    }
   }
 }
 
 @media only screen and (max-width: 600px) {
   .login-container {
-    background-color: lightblue;
+
+    background-image: url(../../../assets/avocado-cooked-delicious-dish-262959.jpg);
+
+    .login-box {
+      width: 90%;
+
+
+      .login-card {
+        width: 40%;
 
 
 
-      .login-box{
-        width: 90%;
-
-
-        .login-card{
-          width: 40%;
-
-
-
-     }
+      }
     }
-   }
   }
-
-
-
-
-
-
-
-
-
-
+}

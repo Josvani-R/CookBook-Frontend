@@ -1,28 +1,35 @@
-
-
-<form class= "login-container">
-
-<div class="login-box">
-<mat-card class="login-card">
-<div>
-<mat-form-field class= "login-input">
-  <input matInput type="text">
-  <mat-placeholder class="placeholder">Username</mat-placeholder>
-</mat-form-field>
+<div *ngIf="videoLinks" class="background-video">
+  <mat-carousel timings="500ms ease-in" [autoplay]="true" interval="5000" color="accent" maxWidth="100%"
+    slides="{{videoLinks.length}}" [loop]="true" [hideArrows]="true" [hideIndicators]="true" [useKeyboard]="false"
+    proportion="50" [useMouseWheel]="false" orientation="rtl">
+    <mat-carousel-slide #matCarouselSlide *ngFor="let link of videoLinks" overlayColor="#00000040"
+      [hideOverlay]="false">
+      <div>
+        <video autoplay loop muted>
+          <source src={{link}}>
+        </video>
+      </div>
+    </mat-carousel-slide>
+  </mat-carousel>
 </div>
-<div>
-<mat-form-field class= "login-input">
-  <input matInput type="password">
-  <mat-placeholder class="placeholder">Password</mat-placeholder>
-</mat-form-field>
-</div>
+<form class="login-container">
 
-
-<button id="login" mat-stroked-button type="submit">Login</button>
-</mat-card>
-</div>
+  <div class="login-box">
+    <mat-card class="login-card">
+      <div>
+        <mat-form-field class="login-input">
+          <input matInput type="text">
+          <mat-placeholder class="placeholder">Username</mat-placeholder>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="login-input">
+          <input matInput type="password">
+          <mat-placeholder class="placeholder">Password</mat-placeholder>
+        </mat-form-field>
+      </div>
+      <button id="login" mat-stroked-button type="submit">Login</button>
+    </mat-card>
+  </div>
 
 </form>
-
-
-

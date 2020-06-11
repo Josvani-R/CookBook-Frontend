@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 import {LoginService} from 'src/app/service/login.service'
@@ -10,12 +11,13 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }
-
+import { PexelService } from 'src/app/service/pexel.service';
+import { MatCarousel, MatCarouselComponent } from '@ngmodule/material-carousel';
 
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.scss']
+  styleUrls: ['./login-form.component.scss'],
 })
 export class LoginFormComponent implements OnInit {
   text = 'Login page';
@@ -24,21 +26,32 @@ export class LoginFormComponent implements OnInit {
     Validators.email,
   ]);
 
-  matcher = new MyErrorStateMatcher();
-  constructor(
-    private loginService: LoginService,
-    private router: Router 
-  ) { }
+
+  poster: any;
+  getVid: any;
+  videoLinks: string[] = [];
+
+  // matcher = new MyErrorStateMatcher();
+  constructor(private pexelService: PexelService,private loginService: LoginService,
+    private router: Router) {}
 
   ngOnInit(): void {
+    this.getRandomVideo();
     this.login("user1", "password");
+    // this.getVid = setInterval(() => {
+    //   this.getRandomVideo();
+    // }, 10000);
   }
-
-  login(email, password) {
+  ngOnDestroy() {
+    if (this.getVid) {
+      clearInterval(this.getVid);
+    }
+  }
+}
+ login(email, password) {
     this.loginService.login(email, password)
     .then(response => this.parseLogIn(response))
   }
-
 parseLogIn(response) {
   console.log(response);
   if (response === 'failed login') {
@@ -48,13 +61,22 @@ parseLogIn(response) {
       localStorage.setItem("token", response.idtoken);
       localStorage.setItem("userId", response.User.id);
       this.router.navigate(['homepage']);
-
-  }
-}
-
 logOut()
 {
  this.loginService.logOut;
 }
 
+  getRandomVideo() {
+    this.pexelService.getRandomCookingVideos().then((res) => {
+      let randomVideo = Math.round(Math.random() * res.videos.length);
+      console.log(res.videos[randomVideo]);
+
+      res.videos.forEach((element) => {
+        element.video_files.forEach((element2) => {
+          element2.width == '1920' && this.videoLinks.push(element2.link);
+        });
+      });
+      console.log(this.videoLinks);
+    });
+  }
 }

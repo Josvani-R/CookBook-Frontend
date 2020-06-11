@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatSelectModule} from '@angular/material/select';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatCardModule} from '@angular/material/card';
-import {ReactiveFormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,15 +21,17 @@ import { NavComponent } from './components/nav/nav.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CookbookComponent } from './components/cookbook/cookbook.component';
-
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { RecipedetailComponent } from './components/recipedetail/recipedetail.component';
 import { RecipemodalComponent } from './components/recipemodal/recipemodal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { FilterPipe } from './pipes/filter.pipe';
-
-
-
+import { ProfileComponent } from './components/profile/profile.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { RecipeComponent } from './components/recipe/recipe.component';
+import { MatBadgeModule } from '@angular/material/badge';
+import { EditUserModalComponent } from './components/edit-user-modal/edit-user-modal.component';
 
 
 @NgModule({
@@ -45,6 +47,9 @@ import { FilterPipe } from './pipes/filter.pipe';
     CookbookComponent,
     SearchBarComponent,
     FilterPipe,
+    ProfileComponent,
+    RecipeComponent,
+    EditUserModalComponent,
 
   ],
   imports: [
@@ -64,11 +69,12 @@ import { FilterPipe } from './pipes/filter.pipe';
     MatIconModule,
     MatListModule,
     HttpClientModule,
-     MatDialogModule
-
-
+    MatDialogModule,
+    MatTabsModule,
+    MatBadgeModule,
+    MatCarouselModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
