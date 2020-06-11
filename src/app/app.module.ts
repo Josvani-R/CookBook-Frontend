@@ -25,6 +25,8 @@ import { CookbookComponent } from './components/cookbook/cookbook.component';
 import { RecipedetailComponent } from './components/recipedetail/recipedetail.component';
 import { RecipemodalComponent } from './components/recipemodal/recipemodal.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 
@@ -41,6 +43,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     RecipedetailComponent,
     RecipemodalComponent,
     CookbookComponent,
+    SearchBarComponent,
+    FilterPipe,
 
   ],
   imports: [
