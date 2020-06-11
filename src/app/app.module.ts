@@ -25,12 +25,15 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { RecipedetailComponent } from './components/recipedetail/recipedetail.component';
 import { RecipemodalComponent } from './components/recipemodal/recipemodal.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { FilterPipe } from './pipes/filter.pipe';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { EditUserModalComponent } from './components/edit-user-modal/edit-user-modal.component';
 import { UserComponent } from './components/user/user.component';
+
 
 @NgModule({
   declarations: [
@@ -39,10 +42,11 @@ import { UserComponent } from './components/user/user.component';
     NavComponent,
     HomepageComponent,
     CookbookComponent,
-
     RecipedetailComponent,
     RecipemodalComponent,
     CookbookComponent,
+    SearchBarComponent,
+    FilterPipe,
     ProfileComponent,
     RecipeComponent,
     EditUserModalComponent,
