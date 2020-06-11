@@ -12,6 +12,7 @@ import { PexelService } from 'src/app/service/pexel.service';
 })
 export class HomepageComponent implements OnInit {
   cookbooks: Cookbook[];
+  users: User[];
 
   photo: string;
 
@@ -24,33 +25,23 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     this.getAllUsers();
     this.getAllCookBooks();
-    this.getAllCookbooksById();
+    // this.getAllCookbooksById();
     this.getPhotoBackground();
   }
 
   getPhotoBackground(): void {
-    616360;
 
     this.pexelService.getPhotoById(349609).then((res) => {
       console.log(res);
       this.photo = res.src.large2x;
     });
-    // this.pexelService
-    //   .getRandomPhotos('cooking')
-    //   .then((res) => {
-    //     this.photo =
-    //       res.photos[Math.round(Math.random() * res.photos.length)].src.large2x;
-    //     console.log(res);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
   }
 
   getAllCookBooks(): void {
     this.cookbookService
       .getAllCookbooks()
       .then((res) => {
+        this.cookbooks = res;
         console.log(res);
       })
       .catch((error) => {
@@ -62,7 +53,7 @@ export class HomepageComponent implements OnInit {
     this.userService
       .getAllUsers()
       .then((res) => {
-        console.log(res);
+        this.users = res;
       })
       .catch((error) => {
         console.log(error);

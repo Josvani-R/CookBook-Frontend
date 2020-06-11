@@ -30,6 +30,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { EditUserModalComponent } from './components/edit-user-modal/edit-user-modal.component';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { EditUserModalComponent } from './components/edit-user-modal/edit-user-m
     ProfileComponent,
     RecipeComponent,
     EditUserModalComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,

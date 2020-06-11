@@ -2,11 +2,26 @@
 
 
 <div class="homepage-container" style="background-image: url({{photo}}); background-size: cover">
-  <h1>News feed</h1>
-  <div class="cookbook-container">
-    <app-cookbook *ngFor="let cookbook of cookbooks" [cookbook]="cookbook"></app-cookbook>
-  </div>
+  <h1>Cutting Board</h1>
 
 
 
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="CookBook">
+    <div class="cookbooks-div container-div" >
+      <app-cookbook *ngFor="let cookbook of cookbooks" [cookbook]="cookbook"></app-cookbook>
+    </div>
+  </mat-tab>
+  <mat-tab label="Users">
+    <div class="favorite-div container-div">
+      <app-user *ngFor="let user of users" [user]="user"></app-user>
+    </div>
+  </mat-tab>
+  <mat-tab label="Recipes">
+    <div class="favorite-div container-div">
+      <p>all recipes</p>
+      <!-- <app-recipe *ngFor="let recipe of likedRecipes" [recipe]="recipe.recipe"></app-recipe> -->
+    </div>
+  </mat-tab>
+</mat-tab-group>
 </div>
