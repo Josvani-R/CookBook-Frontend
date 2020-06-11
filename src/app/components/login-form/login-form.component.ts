@@ -44,7 +44,7 @@ export class LoginFormComponent implements OnInit {
     this.pexelService.getRandomCookingVideos().then((res) => {
       let randomVideo = Math.round(Math.random() * res.videos.length);
       console.log(res.videos[randomVideo]);
-
+      res;
       res.videos.forEach((element) => {
         element.video_files.forEach((element2) => {
           element2.width == '1920' && this.videoLinks.push(element2.link);
