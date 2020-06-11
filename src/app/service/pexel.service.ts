@@ -14,6 +14,7 @@ export class PexelService {
 
     return this.http
       .get<any>(
+
         'https://api.pexels.com/videos/search?query=food&per_page=10&min_width=3800&duration=10',
         {
           headers,
@@ -33,6 +34,7 @@ export class PexelService {
       })
       .toPromise();
   }
+
 
   getPhotoById(id: number) {
     const headers = new HttpHeaders({
