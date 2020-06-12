@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {FormControl,
+  FormGroupDirective, NgForm,
+  Validators,FormBuilder,FormGroup} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 import {LoginService} from 'src/app/service/login.service'
 import {Router} from '@angular/router';
+import { PexelService } from 'src/app/service/pexel.service';
+import { MatCarousel, MatCarouselComponent } from '@ngmodule/material-carousel';
+
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -11,8 +15,8 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }
-import { PexelService } from 'src/app/service/pexel.service';
-import { MatCarousel, MatCarouselComponent } from '@ngmodule/material-carousel';
+
+
 
 @Component({
   selector: 'app-login-form',
@@ -26,7 +30,8 @@ export class LoginFormComponent implements OnInit {
     Validators.email,
   ]);
 
-
+  password='';
+  username='';
   poster: any;
   getVid: any;
   videoLinks: string[] = [];
@@ -37,7 +42,7 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRandomVideo();
-    this.login("user1", "password");
+    // this.login("user1", "password");
     // this.getVid = setInterval(() => {
     //   this.getRandomVideo();
     // }, 10000);
@@ -48,16 +53,17 @@ export class LoginFormComponent implements OnInit {
     }
   }
 
- login(email, password) {
-    this.loginService.login(email, password)
+ login(username, password) {
+    this.loginService.login(username, password)
     .then(response => this.parseLogIn(response))
   }
 parseLogIn(response) {
   console.log(response);
-  if (response === 'failed login') {
-    alert("Your email or password was incorrect. Please try again.");
+  if (response.failed) {
+    alert("Your username or password was incorrect. Please try again.");
     this.router.navigate(['']);
   } else {
+      localStorage.setItem("login", "true");
       localStorage.setItem("token", response.idtoken);
       localStorage.setItem("userId", response.User.id);
       this.router.navigate(['homepage']);

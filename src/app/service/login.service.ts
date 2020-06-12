@@ -15,8 +15,8 @@ export class LoginService {
     private usersService: UsersService
   ) { }
 
-  login(email: string, password: string) {
-    return this.http.get<any>(`${this.url}/${email}/${password}`).toPromise();
+  login(username: string, password: string) {
+    return this.http.get<any>(`${this.url}/${username}/${password}`).toPromise();
   }
 
   logOut()
