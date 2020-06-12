@@ -10,6 +10,7 @@ import { LikedRecipeService } from 'src/app/service/liked-recipe.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditUserModalComponent } from '../edit-user-modal/edit-user-modal.component';
 import { PexelService } from 'src/app/service/pexel.service';
+import { Recipe } from 'src/app/Model/Recipe';
 
 @Component({
   selector: 'app-profile',
@@ -23,6 +24,8 @@ export class ProfileComponent implements OnInit {
   photo: string;
   photographer: string;
   photographer_url: string;
+  recipes: Recipe[] = [];
+  userId: number = parseInt(this.route.snapshot.paramMap.get('id'));
 
   constructor(
     private route: ActivatedRoute,
@@ -30,14 +33,14 @@ export class ProfileComponent implements OnInit {
     private cookbookService: CookBookService,
     private likedRecipeService: LikedRecipeService,
     public dialog: MatDialog,
-    private pexelService: PexelService
+    private pexelService: PexelService,
+    private recipeService: RecipeService
   ) {}
 
   ngOnInit(): void {
-    let id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.getUserById();
     this.getCookBooksById();
-    this.getAllRecipiesById();
+    this.getRecipesByUserId();
     this.getAllFavoriteRecipesById();
     this.getPhotoBackground();
   }
@@ -59,9 +62,8 @@ export class ProfileComponent implements OnInit {
   }
 
   getCookBooksById() {
-    let id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.cookbookService
-      .getAllCookbooksById(id)
+      .getAllCookbooksById(this.userId)
       .then((data) => {
         this.cookbooks = data;
       })
@@ -70,19 +72,27 @@ export class ProfileComponent implements OnInit {
       });
   }
   getUserById() {
-    let id = parseInt(this.route.snapshot.paramMap.get('id'));
-    this.userService.getUserById(id).then((res) => {
+    this.userService.getUserById(this.userId).then((res) => {
       console.log(res);
       this.user = res;
     });
   }
 
-  getAllRecipiesById() {}
+  getRecipesByUserId(): void{
+    this.recipeService.getRecipesByUserId(this.userId)
+    .then(data => {
+      console.log(data);
+      this.recipes = data;
+    })
+    .catch(error => {
+      (console.log(error));
+    }
+    );
+  }
 
   getAllFavoriteRecipesById() {
-    let id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.likedRecipeService
-      .getLikedRecipesById(id)
+      .getLikedRecipesById(this.userId)
       .then((data) => {
         console.log(data);
         this.likedRecipes = data;
