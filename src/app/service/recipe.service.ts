@@ -26,12 +26,16 @@ export class RecipeService {
     return this.http.delete<Recipe>(`${this.url}/${id}`).toPromise();
   }
 
-getRecipeById(id): Promise<Recipe> {
+getRecipeById(id: number): Promise<Recipe> {
   return this.http.get<Recipe>(`${this.url}/${id}`).toPromise();
 }
 
   getAllRecipes(): Promise<Recipe[]> {
     return this.http.get<Recipe[]>(`${this.url}`).toPromise();
+  }
+
+  getRecipesByUserId(id: number): Promise<Recipe[]>{
+    return this.http.get<Recipe[]>(`${this.url}/users/${id}`).toPromise();
   }
 
 }

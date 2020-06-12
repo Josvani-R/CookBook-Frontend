@@ -1,4 +1,5 @@
 import {Cookbook} from './Cookbook';
+import { User } from './User';
 
 export interface Recipe{
   id: number;
@@ -6,4 +7,5 @@ export interface Recipe{
   name: string;
   description: string;
   pic: string;
+  user: User;
 }

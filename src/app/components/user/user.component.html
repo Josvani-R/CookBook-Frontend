@@ -8,13 +8,13 @@
 
   </mat-card-header>
 <mat-card-content>
-  <h4>{{user.firstName}} {{user.lastName}}</h4>
+  <h2>{{user.firstName}} {{user.lastName}}</h2>
   <p>{{user.username}}
   </p>
 
   <mat-card-footer>
     <em matBadge="{{cookbooks.length}}" matBadgeColor="$primary" class="fas fa-book-open fa-2x"></em>
-    <em matBadge="120" matBadgeColor="$primary" class="fas fa-utensil-spoon fa-2x"></em>
+    <em matBadge="{{recipes.length}}" matBadgeColor="$primary" class="fas fa-utensil-spoon fa-2x"></em>
 
 
   </mat-card-footer>
