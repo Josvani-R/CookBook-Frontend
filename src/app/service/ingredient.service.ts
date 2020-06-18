@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { promise } from 'protractor';
 import { HttpClient } from '@angular/common/http';
-import {Ingredient} from '../Model/Ingredient';
+import {Ingredient} from '../Model/ingredient';
 @Injectable({
   providedIn: 'root'
 })

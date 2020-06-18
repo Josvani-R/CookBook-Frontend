@@ -1,0 +1,41 @@
+  
+  <mat-horizontal-stepper linear #stepper>
+    <mat-step [stepControl]="cookbookFormGroup" [editable]="isEditable">
+      <form [formGroup]="cookbookFormGroup">
+        <ng-template matStepLabel>Fill out name</ng-template>
+        <mat-form-field>
+          <mat-label>Title of Cookbook</mat-label>
+          <input matInput formControlName="firstCtrl" placeholder="Title of Cookbook" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="firstCtrl" placeholder="Description" required>
+          </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Recipe Instructions</ng-template>
+        <mat-form-field>
+          <mat-label>Describe recipe</mat-label>
+          <input matInput formControlName="secondCtrl" placeholder=""
+                 required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>

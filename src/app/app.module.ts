@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -33,6 +34,10 @@ import { RecipeComponent } from './components/recipe/recipe.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { EditUserModalComponent } from './components/edit-user-modal/edit-user-modal.component';
 import { UserComponent } from './components/user/user.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import { CreateRecipeComponent } from './components/create-recipe/create-recipe.component';
+import { CreateCookbookComponent } from './components/create-cookbook/create-cookbook.component';
+
 
 
 @NgModule({
@@ -51,6 +56,8 @@ import { UserComponent } from './components/user/user.component';
     RecipeComponent,
     EditUserModalComponent,
     UserComponent,
+    CreateRecipeComponent,
+    CreateCookbookComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +79,8 @@ import { UserComponent } from './components/user/user.component';
     MatDialogModule,
     MatTabsModule,
     MatBadgeModule,
-    MatCarouselModule.forRoot()
+    MatCarouselModule.forRoot(),
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent],
