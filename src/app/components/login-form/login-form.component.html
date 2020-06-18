@@ -1,6 +1,6 @@
 <div *ngIf="videoLinks" class="background-video">
   <mat-carousel timings="1200ms ease-in" [autoplay]="true" interval="5000" color="accent" maxWidth="auto"
-    slides="{{videoLinks.length}}" [loop]="true" [hideArrows]="true" [hideIndicators]="true" [useKeyboard]="false"
+    slides="{{videoLinks.length && videoLinks.length}}" [loop]="true" [hideArrows]="true" [hideIndicators]="true" [useKeyboard]="false"
     proportion="50" [useMouseWheel]="false" orientation="rtl">
     <mat-carousel-slide #matCarouselSlide *ngFor="let link of videoLinks" overlayColor="#262525" [hideOverlay]="false">
       <div>

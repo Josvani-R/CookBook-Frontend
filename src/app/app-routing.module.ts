@@ -5,6 +5,8 @@ import { RecipedetailComponent } from './components/recipedetail/recipedetail.co
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import {AuthenticatorGuard} from 'src/app/authenticator.guard';
 import { ProfileComponent } from './components/profile/profile.component';
+import {CreateRecipeComponent} from './components/create-recipe/create-recipe.component'
+import { CreateCookbookComponent } from './components/create-cookbook/create-cookbook.component';
 
 
 const routes: Routes = [
@@ -12,6 +14,8 @@ const routes: Routes = [
   { path: 'recipe/:id', component: RecipedetailComponent },
   { path: '', component: LoginFormComponent },
   { path: 'profile/:id', component: ProfileComponent },
+  { path: 'create-recipe', component: CreateRecipeComponent},
+  { path: 'create-cookbook', component: CreateCookbookComponent}
 ];
 
 @NgModule({

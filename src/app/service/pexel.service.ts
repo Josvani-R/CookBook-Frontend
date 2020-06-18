@@ -15,7 +15,7 @@ export class PexelService {
     return this.http
       .get<any>(
 
-        'https://api.pexels.com/videos/search?query=food&per_page=10&min_width=3800&duration=10',
+        'https://api.pexels.com/videos/search?query=cook&per_page=10&min_width=3800&duration=10',
         {
           headers,
         }
