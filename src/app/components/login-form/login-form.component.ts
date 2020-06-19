@@ -46,6 +46,7 @@ export class LoginFormComponent implements OnInit {
     // this.getVid = setInterval(() => {
     //   this.getRandomVideo();
     // }, 10000);
+  
   }
   ngOnDestroy() {
     if (this.getVid) {
@@ -85,5 +86,6 @@ logOut(){
       console.log(this.videoLinks);
     });
   }
+
 }
 

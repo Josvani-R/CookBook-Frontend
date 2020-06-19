@@ -13,9 +13,9 @@ import {PexelService} from 'src/app/service/pexel.service';
   styleUrls: ['./recipedetail.component.scss']
 })
 export class RecipedetailComponent implements OnInit {
-  ingredients;
+  ingredients: Ingredient[] =[];
   recipe;
-photo;
+  photo;
 
   constructor(
     private recipeService: RecipeService,
@@ -27,30 +27,31 @@ photo;
 
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-
+    
     this.getRecipe(id);
     this.getIngredients(id);
-    this.getPhotoBackground();
+    //this.getPhotoBackground();
    
   }
 
   getRecipe(id) {
     this.recipeService.getRecipeById(id)
-    .then( response => {this.recipe = response}); 
-
+    .then( response => {this.recipe = response;
+      this.getPhotoBackground()}); 
 
 }
 
 getIngredients(id) {
   this.ingredientService.getIngredientsByRecipeId(id)
-  .then( response => {this.ingredients = response});
+  .then( response => {this.ingredients = response;
+  console.log(response)});
   
 }
 
 getPhotoBackground(): void {
  
   this.pexelService
-    .getRandomPhotos(`food`)
+    .getRandomPhotos(`${this.recipe.name}`)
     .then((res) => {
       this.photo =
         res.photos[Math.round(Math.random() * res.photos.length)].src.large2x;

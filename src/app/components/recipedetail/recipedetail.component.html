@@ -1,7 +1,16 @@
 <div class="detail-container" style="background-image: url({{photo}}); background-size: cover">
+    <mat-card class="recipe-card">
+        <mat-card-title>{{recipe.name}}</mat-card-title>
+        <mat-card-content>
+            {{recipe.instructions}}
+            <h3>Ingredients</h3>
+            <ul>
+                <li *ngFor="let ingredient of ingredients; index as i; first as isFirst">
+                    {{ingredient.name}}<span> - {{ingredient.amount}}</span>
+                  </li>
+            </ul>
+           
+        </mat-card-content>
 
-{{recipe.name}}
-<p>Ingredients</p>
-
-
+    </mat-card>
 </div>
