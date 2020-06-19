@@ -11,6 +11,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditUserModalComponent } from '../edit-user-modal/edit-user-modal.component';
 import { PexelService } from 'src/app/service/pexel.service';
 import { Recipe } from 'src/app/Model/Recipe';
+import { CreateCookbookComponent } from '../create-cookbook/create-cookbook.component';
+import { CreateCookbookModalComponent } from '../create-cookbook-modal/create-cookbook-modal.component';
 
 @Component({
   selector: 'app-profile',
@@ -108,5 +110,9 @@ export class ProfileComponent implements OnInit {
         user: this.user,
       },
     });
+  }
+
+  openCreateDialog(){
+    this.dialog.open(CreateCookbookModalComponent);
   }
 }

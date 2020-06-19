@@ -66,6 +66,7 @@ parseLogIn(response) {
       localStorage.setItem("login", "true");
       localStorage.setItem("token", response.idtoken);
       localStorage.setItem("userId", response.User.id);
+      localStorage.setItem("user", response.User);
       this.router.navigate(['homepage']);
   }
 }

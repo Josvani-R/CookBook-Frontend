@@ -23,5 +23,9 @@ getAllCookbooksById(id: number): Promise<Cookbook[]>{
   return this.http.get<Cookbook[]>(`${this.url}/users/${id}`).toPromise();
 }
 
+createCookbook(cookbook: Cookbook): Promise<Cookbook>{
+ return this.http.post<Cookbook>(`${this.url}`, cookbook).toPromise();
+}
+
 
 }
