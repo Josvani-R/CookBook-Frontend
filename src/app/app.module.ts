@@ -37,6 +37,7 @@ import { UserComponent } from './components/user/user.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { CreateRecipeComponent } from './components/create-recipe/create-recipe.component';
 import { CreateCookbookComponent } from './components/create-cookbook/create-cookbook.component';
+import { CreateCookbookModalComponent } from './components/create-cookbook-modal/create-cookbook-modal.component';
 
 
 
@@ -58,6 +59,7 @@ import { CreateCookbookComponent } from './components/create-cookbook/create-coo
     UserComponent,
     CreateRecipeComponent,
     CreateCookbookComponent,
+    CreateCookbookModalComponent,
   ],
   imports: [
     BrowserModule,

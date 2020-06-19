@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Create Cookbook</h2>
+
+<mat-dialog-content class="mat-typography">
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Cookbook title</mat-label>
+      <input [(ngModel)]="title" matInput placeholder="Title" value='{{createCookbook.title}}'>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Discription</mat-label>
+      <textarea [(ngModel)]="description" matInput placeholder="Discription" value='{{createCookbook.description}}'></textarea>
+
+    </mat-form-field>
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="createCookBook()" [disabled]="
+    (this.createCookbook.title == '' &&
+    this.createCookbook.description == '' ) !== false">Create Cookbook</button>
+</mat-dialog-actions>
