@@ -1,4 +1,4 @@
-<div class="detail-container" style="background-image: url({{photo}}); background-size: cover">
+<div class="detail-container" style="background-image: url({{photo}}); ">
     <mat-card class="recipe-card">
         <mat-card-title>{{recipe.name}}</mat-card-title>
         <mat-card-content>
@@ -11,6 +11,12 @@
             </ul>
            
         </mat-card-content>
-
+        <div style="text-align:center">
+            <h1>
+              ng-starrating demo
+            </h1>
+            <star-rating value="5" totalstars="5" checkedcolor="red" uncheckedcolor="black" size="24px" readonly="false" (rate)="onRate($event)"></star-rating>
+          </div>
+        <em class="fas fa-edit" *ngIf="isRecipe" (click)="openEditRecipeDialog()"></em>
     </mat-card>
 </div>
