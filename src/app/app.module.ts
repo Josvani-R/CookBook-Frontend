@@ -38,7 +38,8 @@ import {MatStepperModule} from '@angular/material/stepper';
 import { CreateRecipeComponent } from './components/create-recipe/create-recipe.component';
 import { CreateCookbookComponent } from './components/create-cookbook/create-cookbook.component';
 import { CreateCookbookModalComponent } from './components/create-cookbook-modal/create-cookbook-modal.component';
-
+import { EditRecipeModalComponent } from './components/edit-recipe-modal/edit-recipe-modal.component';
+import { RatingModule } from 'ng-starrating';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { CreateCookbookModalComponent } from './components/create-cookbook-modal
     CreateRecipeComponent,
     CreateCookbookComponent,
     CreateCookbookModalComponent,
+    EditRecipeModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,7 +84,8 @@ import { CreateCookbookModalComponent } from './components/create-cookbook-modal
     MatTabsModule,
     MatBadgeModule,
     MatCarouselModule.forRoot(),
-    MatStepperModule
+    MatStepperModule,
+    RatingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

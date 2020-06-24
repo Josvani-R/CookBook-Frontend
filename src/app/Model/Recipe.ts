@@ -5,7 +5,7 @@ export interface Recipe{
   id: number;
   cookbook: Cookbook;
   name: string;
-  description: string;
+  instructions: string;
   pic: string;
   user: User;
 }
