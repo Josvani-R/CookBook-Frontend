@@ -28,16 +28,16 @@ export class RecipedetailComponent implements OnInit {
     private location: Location,
     private pexelService: PexelService,
     public dialog: MatDialog,
-    
+
   ) { }
 
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    
+
     this.getRecipe(id);
     this.getIngredients(id);
 
-   
+
   }
 
   getRecipe(id) {
@@ -48,7 +48,7 @@ export class RecipedetailComponent implements OnInit {
       console.log(localStorage.getItem('userId'));
       console.log(this.recipe.user.id);
       console.log(this.isRecipe)
-    }); 
+    });
 
 }
 
@@ -56,11 +56,11 @@ getIngredients(id) {
   this.ingredientService.getIngredientsByRecipeId(id)
   .then( response => {this.ingredients = response;
   console.log(response)});
-  
+
 }
 
 getPhotoBackground(): void {
- 
+
   this.pexelService
     .getRandomPhotos(`${this.recipe.name}`)
     .then((res) => {
@@ -80,20 +80,20 @@ openEditRecipeDialog(): void {
     recipe: this.recipe}
   });
 
-  dialogRef.afterClosed().subscribe(result => {
-    console.log('The dialog was closed');
-    console.log(result);
-    this.ingredients = result;
-  });
+  // dialogRef.afterClosed().subscribe(result => {
+  //   console.log('The dialog was closed');
+  //   console.log(result);
+  //   this.ingredients = result;
+  // });
 
 
 }
 
 
 onRate($event:{oldValue:number, newValue:number, starRating:StarRatingComponent}) {
-  alert(`Old Value:${$event.oldValue}, 
-    New Value: ${$event.newValue}, 
-    Checked Color: ${$event.starRating.checkedcolor}, 
+  alert(`Old Value:${$event.oldValue},
+    New Value: ${$event.newValue},
+    Checked Color: ${$event.starRating.checkedcolor},
     Unchecked Color: ${$event.starRating.uncheckedcolor}`);
 }
 

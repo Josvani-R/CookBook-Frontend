@@ -28,6 +28,7 @@ export class ProfileComponent implements OnInit {
   photographer_url: string;
   recipes: Recipe[] = [];
   userId: number = parseInt(this.route.snapshot.paramMap.get('id'));
+  isUser: boolean = this.userId == localStorage.userId;
 
   constructor(
     private route: ActivatedRoute,

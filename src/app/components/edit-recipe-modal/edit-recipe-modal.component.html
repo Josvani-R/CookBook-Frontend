@@ -1,2 +1,18 @@
-<p>{{data.recipe.name}}</p>
-<p>{{data.recipe.instructions}}</p>
+<mat-dialog-content *ngIf = "editRecipe">
+<p>
+    <mat-form-field appearance="outline">
+      <mat-label>Recipe Name</mat-label>
+      <input [(ngModel)]="editRecipe.name" matInput placeholder="Recipe NAme" value='{{editRecipe.name}}'>
+    </mat-form-field>
+    </p>
+<p>
+  <mat-form-field>
+    <mat-label>Instructions</mat-label>
+  <textarea [(ngModel)]="editRecipe.instructions" matInput placeholder="Instructions" value='{{editRecipe.instructions}}'></textarea>
+    </mat-form-field>
+  </p>
+</mat-dialog-content>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button [mat-dialog-close]="true" (click)="updateRecipe()" >Update</button>
+</div>
