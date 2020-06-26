@@ -10,7 +10,7 @@
 
     <mat-card-actions>
 
-      <div>
+      <div *ngIf="isUser">
       <button mat-button (click)="openDialog()" class="edit-button"><em class="fas fa-user-edit fa-2x"></em></button>
       <button (click)="openCreateDialog()" class = "create-cookbook" mat-raised-button>Create Cookbook <em class="fas fa-plus-circle"></em></button>
     </div>

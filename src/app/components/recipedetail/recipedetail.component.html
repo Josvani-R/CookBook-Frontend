@@ -1,6 +1,7 @@
 <div class="detail-container" style="background-image: url({{photo}}); ">
     <mat-card class="recipe-card">
         <mat-card-title>{{recipe.name}}</mat-card-title>
+        <em class="fas fa-edit" *ngIf="isRecipe" (click)="openEditRecipeDialog()"></em>
         <mat-card-content>
             {{recipe.instructions}}
             <h3>Ingredients</h3>
@@ -9,7 +10,7 @@
                     {{ingredient.name}}<span> - {{ingredient.amount}}</span>
                   </li>
             </ul>
-           
+
         </mat-card-content>
         <div style="text-align:center">
             <h1>
@@ -17,6 +18,6 @@
             </h1>
             <star-rating value="5" totalstars="5" checkedcolor="red" uncheckedcolor="black" size="24px" readonly="false" (rate)="onRate($event)"></star-rating>
           </div>
-        <em class="fas fa-edit" *ngIf="isRecipe" (click)="openEditRecipeDialog()"></em>
+
     </mat-card>
 </div>

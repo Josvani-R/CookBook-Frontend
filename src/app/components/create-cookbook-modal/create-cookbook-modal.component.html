@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Create Cookbook</h2>
+<!-- <h2 mat-dialog-title>Create Cookbook</h2>
 
 <mat-dialog-content class="mat-typography">
   <p>
@@ -17,7 +17,32 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="createCookBook()" [disabled]="
-    (this.createCookbook.title == '' &&
-    this.createCookbook.description == '' ) !== false">Create Cookbook</button>
-</mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="true" (click)="newCookBook()">Create Cookbook</button>
+</mat-dialog-actions> -->
+
+<h1 mat-dialog-title>Dialog with elements</h1>
+<div mat-dialog-content *ngIf = "cookbook">
+  <div class="example-container">
+    <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input  [(ngModel)]="cookbook.title" matInput>
+
+    </mat-form-field>
+    </p>
+    <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea  [(ngModel)]="cookbook.description" matInput></textarea>
+
+    </mat-form-field>
+    </p>
+  </div>
+
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button [mat-dialog-close]="true" (click)="newCookBook()" >Create Cookbook</button>
+</div>
+
